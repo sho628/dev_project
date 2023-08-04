@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+  }
+  
+  .menu-list {
+    display: flex;
+    list-style: none; /* 기본 리스트 스타일 제거 */
+    padding: 0;
+    position: fixed; /* 화면이 768px 이하일 때는 고정 */
+    top: 0; /* 화면 상단에 고정됨 */
+    left: 0; /* 화면 왼쪽에 고정됨 */
+    width: 100%; /* 화면 전체 너비를 사용 */
+    background-color: #fff; /* 배경색을 원하는대로 설정 */
+    z-index: 1; /* 다른 요소 위에 표시하기 위해 z-index 설정 */
+  }
+  
+  .menu-list li {
+    margin: 0 10px; /* 각 항목 사이의 간격 설정 */
+    white-space: nowrap; /* 텍스트가 한 줄로만 표시되도록 설정 */
+  }
+  
+  .menu-list li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  /* 반응형 스타일 추가 */
+  @media (min-width: 769px) {
+    .container {
+      flex-direction: column; /* 화면이 769px 이상일 때는 세로 배치 */
+      align-items: center; /* 화면이 769px 이상일 때는 가운데 정렬 */
+    }
+  
+    .menu-list {
+      flex-direction: row; /* 화면이 769px 이상일 때는 가로 배치 */
+      position: static; /* 화면이 769px 이상일 때는 고정하지 않음 */
+      background-color: transparent; /* 배경색을 투명으로 설정 */
+    }
+  
+    .menu-list li {
+      margin: 0 10px; /* 화면이 769px 이상일 때는 각 항목 사이의 간격 설정 */
+      white-space: normal; /* 화면이 769px 이상일 때는 텍스트 줄 바꿈을 허용 */
+    }
+  }
