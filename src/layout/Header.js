@@ -1,8 +1,12 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Login from '../user/login.js';
+import SignUp from '../user/signup.js';
 import './layout.css';
 
 const Header = () => {
   return (
+    <Router>
     <header>
         <div>
             <div>
@@ -22,8 +26,11 @@ const Header = () => {
 
             <div>
                 <a href="/"><i>채팅내역</i></a>
-                <a href="/">
+                <a href="/login">
                     <strong>3초 간편 로그인</strong>
+                </a>
+                <a href="/signup">
+                    <strong>회원가입</strong>
                 </a>
                 <a href="/">탐정 가입</a> | <a href="/">제휴 문의</a>
             </div>
@@ -41,6 +48,13 @@ const Header = () => {
             </div>
         </div>
     </header>
+
+    <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+    </Routes>
+
+    </Router>
   );
 };
 
