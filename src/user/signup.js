@@ -13,7 +13,7 @@ const SignUp = () => {
 
     // 회원가입 요청 보내기
     axios
-      .post('http://15.164.253.191:3000/auth', { user_name, user_login_id, user_password })
+      .post('http://43.200.212.12:5000/auth', { user_name, user_login_id, user_password })
       .then((response) => {
         console.log('회원가입 성공:', response.data);
         // 회원가입 성공 시, 처리를 하시면 됩니다.

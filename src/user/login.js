@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [user_login_id, setUsername] = useState('');
+  const [user_password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
     // 로그인 요청 보내기
     axios
-      .post('http://your-api-endpoint/login', { username, password })
+      .post('http://43.200.212.12:5000/auth/token', { user_login_id, user_password })
       .then((response) => {
         console.log('로그인 성공:', response.data);
         // 로그인 성공 시, 토큰 저장 등의 처리를 하시면 됩니다.
@@ -25,20 +25,20 @@ const Login = () => {
       <h2>Login 페이지</h2>
       <form onSubmit={handleLogin}>
         <div>
-          <label htmlFor="username">아이디:</label>
+          <label htmlFor="user_login_id">아이디:</label>
           <input
             type="text"
-            id="username"
-            value={username}
+            id="user_login_id"
+            value={user_login_id}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         <div>
-          <label htmlFor="password">비밀번호:</label>
+          <label htmlFor="user_password">비밀번호:</label>
           <input
             type="password"
-            id="password"
-            value={password}
+            id="user_password"
+            value={user_password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
