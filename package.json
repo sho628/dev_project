@@ -22,10 +22,8 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "cache": false,
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
