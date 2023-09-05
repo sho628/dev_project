@@ -1,11 +1,17 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './user/login'; // Login 컴포넌트 임포트
+import SignUp from './user/signup'; // SignUp 컴포넌트 임포트
 
-function App() {
+const App = () => {
   return (
-    <div>
-      컨텐츠 요소가 표시됩니다.
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
